@@ -48,12 +48,29 @@ const team = [
 
 console.log(team);
 
+//seleziono il div team dal DOM
+const teamElement = document.querySelector('.team')
+
+
 for (let i = 0; i < team.length; i++) {
-    const teamMember = team[i];
+    let teamMember = team[i];
     
     console.log(teamMember.name);
     console.log(teamMember.role);
     console.log(teamMember.image);
     console.log('_____');
-    
+
 }
+
+
+//stampare le stesse informazioni su DOM sottoforma di stringhe
+
+for (let i = 0; i < team.length; i++) {
+    const memberTeam = team[i]
+
+    const p = document.createElement('p')
+    p.append(memberTeam.name, memberTeam.role, memberTeam.image,)
+    teamElement.append(p)
+
+}
+
