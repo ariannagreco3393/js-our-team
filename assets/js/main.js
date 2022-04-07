@@ -70,10 +70,6 @@ for (let i = 0; i < team.length; i++) {
     const memberTeam = team[i]
 
     const p = document.createElement('p')
-    p.append(memberTeam.name.toString(), memberTeam.role.toString(), memberTeam.image.toString())
+    p.append(memberTeam.name, memberTeam.role, memberTeam.image,)
     teamElement.append(p)
-
-
-
 }
-
