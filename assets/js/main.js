@@ -49,8 +49,7 @@ const team = [
 
 //console.log(team);
 
-//seleziono il div team dal DOM
-const teamElement = document.querySelector('.team')
+const teamElement = document.querySelector('.row')
 
 
 for (let i = 0; i < team.length; i++) {
@@ -64,28 +63,57 @@ for (let i = 0; i < team.length; i++) {
 
 
 
+/*
+BONUS
+*/
+
 //stampare le stesse informazioni su DOM sottoforma di stringhe
+//trasformare la stringa foto in una immagine effettiva
 
 for (let i = 0; i < team.length; i++) {
     const memberTeam = team[i]
 
     const p = document.createElement('p')
-    p.append(memberTeam.name, memberTeam.role, memberTeam.image,)
-    teamElement.append(p)
-}
-
-
-/*
-BONUS
-*/
-
-//trasformare la stringa foto in img
-
-for (let k = 0; k < team.length; k++) {
-    const membro = team[k];
-
     const img = document.createElement('img')
-    img.src = "./img/" + membro.image
-    teamElement.append(img)   
+    const div = document.createElement('div')
+
+    p.append(memberTeam.name, memberTeam.role, img,)
+    teamElement.append(img, p, div )
+
+    img.src = "./img/" + memberTeam.image
+
+  
 }
+
+
+//organizzare i singoli membri in card/schede
+
+
+const pElements = document.querySelectorAll('p')
+//console.log(pElement);
+
+for (const pElement of pElements) {
+    pElement.classList.add('member_name')
+}
+
+const imgElements = document.querySelectorAll('img')
+
+for (const imgElement of imgElements) {
+    imgElement.classList.add('member_img', 'img-fluid')
+}
+
+const cardElements = document.querySelectorAll('.row > div')
+
+for (const cardElement of cardElements) {
+    cardElement.classList.add('card')
+}
+
+
+
+
+
+
+
+
+
 
