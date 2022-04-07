@@ -44,9 +44,10 @@ const team = [
     },
   ];
 
+
 //stampare su console le informazioni di nome, ruolo e la stringa della foto
 
-console.log(team);
+//console.log(team);
 
 //seleziono il div team dal DOM
 const teamElement = document.querySelector('.team')
@@ -59,7 +60,6 @@ for (let i = 0; i < team.length; i++) {
     console.log(teamMember.role);
     console.log(teamMember.image);
     console.log('_____');
-
 }
 
 
@@ -73,3 +73,19 @@ for (let i = 0; i < team.length; i++) {
     p.append(memberTeam.name, memberTeam.role, memberTeam.image,)
     teamElement.append(p)
 }
+
+
+/*
+BONUS
+*/
+
+//trasformare la stringa foto in img
+
+for (let k = 0; k < team.length; k++) {
+    const membro = team[k];
+
+    const img = document.createElement('img')
+    img.src = "./img/" + membro.image
+    teamElement.append(img)   
+}
+
